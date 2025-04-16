@@ -9,11 +9,17 @@ import SwiftUI
 
 struct HomeView: View {
   @StateObject private var pathModel = PathModel()
+  @StateObject private var homeViewModel = HomeViewModel()
 
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
-      Text("zz")
+      ZStack {
+        TabView(selection: $homeViewModel.selectedTab) {
+          CalendarView()
+        }
+      }
     }
+    .environmentObject(pathModel)
   }
 }
 

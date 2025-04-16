@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14022A122DB0150F00F41590 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022A112DB0150F00F41590 /* Tab.swift */; };
 		1463F1EA2DAF44540016BBE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */; };
 		1463F1EB2DAF44540016BBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E52DAF44540016BBE5 /* Assets.xcassets */; };
 		1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */; };
@@ -48,6 +49,7 @@
 		1401D7FE2DACFB2100D6EF66 /* ThanksLens.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThanksLens.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1401D8102DACFB2200D6EF66 /* ThanksLensTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThanksLensTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1401D81A2DACFB2200D6EF66 /* ThanksLensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThanksLensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		14022A112DB0150F00F41590 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1463F1E52DAF44540016BBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksLensApp.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				1401D81A2DACFB2200D6EF66 /* ThanksLensUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		14022A102DB0150100F41590 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				14022A112DB0150F00F41590 /* Tab.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 		1463F1E32DAF44540016BBE5 /* Preview Content */ = {
@@ -208,6 +218,7 @@
 		1463F1FC2DAF9AB80016BBE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				14022A102DB0150100F41590 /* Home */,
 				1463F2112DAFA48A0016BBE5 /* Path */,
 			);
 			path = Model;
@@ -420,6 +431,7 @@
 				1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */,
 				1463F2132DAFA4990016BBE5 /* Path.swift in Sources */,
 				1463F1F62DAF5ABA0016BBE5 /* Color+Extensions.swift in Sources */,
+				14022A122DB0150F00F41590 /* Tab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
