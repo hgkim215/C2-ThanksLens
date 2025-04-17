@@ -13,7 +13,12 @@ struct GalleryView: View {
       Color(Color.customP4)
         .ignoresSafeArea(.all)
 
-      Text("GalleryView 입니다.")
+      VStack {
+        Image("mock_image")
+          .resizable()
+          .scaledToFit()
+          .frame(width: 300, height: 400)
+      }
     }
   }
 }
