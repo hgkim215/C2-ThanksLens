@@ -47,7 +47,7 @@ struct HomeView: View {
         }
         .environmentObject(homeViewModel)
 
-        SeperatorLineView()
+        SeparatorLineView()
       }
     }
 
@@ -57,7 +57,7 @@ struct HomeView: View {
 
 // MARK: - 구분선
 
-private struct SeperatorLineView: View {
+private struct SeparatorLineView: View {
   fileprivate var body: some View {
     VStack {
       Spacer()
