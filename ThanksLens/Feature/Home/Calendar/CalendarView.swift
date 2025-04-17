@@ -9,7 +9,12 @@ import SwiftUI
 
 struct CalendarView: View {
   var body: some View {
-    Text("캘린더뷰입니다.")
+    ZStack {
+      Color(Color.customP4)
+        .ignoresSafeArea(.all)
+
+      Text("CalendarView 입니다.")
+    }
   }
 }
 

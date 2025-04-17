@@ -9,7 +9,12 @@ import SwiftUI
 
 struct GalleryView: View {
   var body: some View {
-    Text("GalleryView 입니다.")
+    ZStack {
+      Color(Color.customP4)
+        .ignoresSafeArea(.all)
+
+      Text("GalleryView 입니다.")
+    }
   }
 }
 
