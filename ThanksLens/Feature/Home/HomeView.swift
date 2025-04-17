@@ -16,10 +16,63 @@ struct HomeView: View {
       ZStack {
         TabView(selection: $homeViewModel.selectedTab) {
           CalendarView()
+            .tabItem {
+              Image(
+                homeViewModel.selectedTab == .calendar
+                  ? "calendarIcon_selected"
+                  : "calendarIcon"
+              )
+            }
+            .tag(Tab.calendar)
+
+          GalleryView()
+            .tabItem {
+              Image(
+                homeViewModel.selectedTab == .gallery
+                  ? "galleryIcon_selected"
+                  : "galleryIcon"
+              )
+            }
+            .tag(Tab.gallery)
+
+          ProfileView()
+            .tabItem {
+              Image(
+                homeViewModel.selectedTab == .profile
+                  ? "profileIcon_selected"
+                  : "profileIcon"
+              )
+            }
+            .tag(Tab.profile)
         }
+        .environmentObject(homeViewModel)
+
+        SeperatorLineView()
       }
     }
+
     .environmentObject(pathModel)
+  }
+}
+
+// MARK: - 구분선
+
+private struct SeperatorLineView: View {
+  fileprivate var body: some View {
+    VStack {
+      Spacer()
+
+      Rectangle()
+        .fill(
+          LinearGradient(
+            gradient: Gradient(colors: [Color.customP4, Color.customGray1.opacity(0.1)]),
+            startPoint: .top,
+            endPoint: .bottom
+          )
+        )
+        .frame(height: 10)
+        .padding(.bottom, 60)
+    }
   }
 }
 

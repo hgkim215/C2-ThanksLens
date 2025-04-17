@@ -9,7 +9,12 @@ import SwiftUI
 
 struct ProfileView: View {
   var body: some View {
-    Text("프로필뷰입니다.")
+    ZStack {
+      Color(Color.customP4)
+        .ignoresSafeArea(.all)
+
+      Text("ProfileView 입니다.")
+    }
   }
 }
 
