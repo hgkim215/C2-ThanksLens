@@ -23,9 +23,8 @@
 		1463F2132DAFA4990016BBE5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2122DAFA4990016BBE5 /* Path.swift */; };
 		1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2142DAFA4BB0016BBE5 /* PathType.swift */; };
 		14B3C6322DB122BB000D516F /* PoorStory-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */; };
-		14B3C6342DB159F0000D516F /* PolaroidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6332DB159F0000D516F /* PolaroidCell.swift */; };
 		14B3C6362DB1FC0B000D516F /* HiMelody-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */; };
-		14B3C6392DB23384000D516F /* PolaroidAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6382DB23384000D516F /* PolaroidAddView.swift */; };
+		14B3C6392DB23384000D516F /* AddPolaroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6382DB23384000D516F /* AddPolaroidView.swift */; };
 		14B3C63D2DB245A7000D516F /* Gaegu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63B2DB245A7000D516F /* Gaegu-Light.ttf */; };
 		14B3C63E2DB245A7000D516F /* Gaegu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63A2DB245A7000D516F /* Gaegu-Bold.ttf */; };
 		14B3C63F2DB245A7000D516F /* Gaegu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63C2DB245A7000D516F /* Gaegu-Regular.ttf */; };
@@ -68,9 +67,8 @@
 		1463F2122DAFA4990016BBE5 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		1463F2142DAFA4BB0016BBE5 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
 		14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoorStory-Regular.ttf"; sourceTree = "<group>"; };
-		14B3C6332DB159F0000D516F /* PolaroidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCell.swift; sourceTree = "<group>"; };
 		14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HiMelody-Regular.ttf"; sourceTree = "<group>"; };
-		14B3C6382DB23384000D516F /* PolaroidAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidAddView.swift; sourceTree = "<group>"; };
+		14B3C6382DB23384000D516F /* AddPolaroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPolaroidView.swift; sourceTree = "<group>"; };
 		14B3C63A2DB245A7000D516F /* Gaegu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Bold.ttf"; sourceTree = "<group>"; };
 		14B3C63B2DB245A7000D516F /* Gaegu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Light.ttf"; sourceTree = "<group>"; };
 		14B3C63C2DB245A7000D516F /* Gaegu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Regular.ttf"; sourceTree = "<group>"; };
@@ -221,7 +219,6 @@
 		1463F1FA2DAF9A800016BBE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				14B3C6332DB159F0000D516F /* PolaroidCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -286,7 +283,7 @@
 		14B3C6372DB23362000D516F /* Polaroid */ = {
 			isa = PBXGroup;
 			children = (
-				14B3C6382DB23384000D516F /* PolaroidAddView.swift */,
+				14B3C6382DB23384000D516F /* AddPolaroidView.swift */,
 			);
 			path = Polaroid;
 			sourceTree = "<group>";
@@ -444,10 +441,9 @@
 				1463F20A2DAFA3DD0016BBE5 /* CalendarView.swift in Sources */,
 				1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */,
 				1463F20E2DAFA3F10016BBE5 /* CalendarViewModel.swift in Sources */,
-				14B3C6392DB23384000D516F /* PolaroidAddView.swift in Sources */,
+				14B3C6392DB23384000D516F /* AddPolaroidView.swift in Sources */,
 				1463F1F82DAF5AC60016BBE5 /* Font+Extensions.swift in Sources */,
 				1463F1FF2DAF9D690016BBE5 /* HomeView.swift in Sources */,
-				14B3C6342DB159F0000D516F /* PolaroidCell.swift in Sources */,
 				1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */,
 				14022A152DB09A1100F41590 /* ThanksPolaroid.swift in Sources */,
 				1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */,
