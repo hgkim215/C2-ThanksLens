@@ -4,7 +4,11 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>PoorStory-Regular.ttf</string>
+		<string>HiMelody-Regular.ttf</string>
+		<string>Gaegu-Light.ttf</string>
+		<string>Gaegu-Regular.ttf</string>
+		<string>Gaegu-Bold.ttf</string>
 	</array>
 	<key>UILaunchScreen</key>
 	<dict>

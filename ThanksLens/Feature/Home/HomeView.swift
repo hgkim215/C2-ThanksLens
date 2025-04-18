@@ -10,21 +10,12 @@ import SwiftUI
 struct HomeView: View {
   @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel()
+  @StateObject private var galleryViewModel = GalleryViewModel()
 
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
       ZStack {
         TabView(selection: $homeViewModel.selectedTab) {
-          CalendarView()
-            .tabItem {
-              Image(
-                homeViewModel.selectedTab == .calendar
-                  ? "calendarIcon_selected"
-                  : "calendarIcon"
-              )
-            }
-            .tag(Tab.calendar)
-
           GalleryView()
             .tabItem {
               Image(
@@ -34,23 +25,46 @@ struct HomeView: View {
               )
             }
             .tag(Tab.gallery)
+            .environmentObject(galleryViewModel)
 
-          ProfileView()
+          GalleryView()
             .tabItem {
               Image(
-                homeViewModel.selectedTab == .profile
-                  ? "profileIcon_selected"
-                  : "profileIcon"
+                homeViewModel.selectedTab == .addPolaroid
+                  ? "addIcon_selected"
+                  : "addIcon"
               )
             }
-            .tag(Tab.profile)
+            .tag(Tab.addPolaroid)
+            .environmentObject(galleryViewModel)
+
+          CalendarView()
+            .tabItem {
+              Image(
+                homeViewModel.selectedTab == .calendar
+                  ? "calendarIcon_selected"
+                  : "calendarIcon"
+              )
+            }
+            .tag(Tab.calendar)
         }
         .environmentObject(homeViewModel)
-
+        .onChange(of: homeViewModel.selectedTab) {
+          if homeViewModel.selectedTab == .addPolaroid {
+            homeViewModel.isAddPolaroidModalPresented = true
+          }
+        }
+        .sheet(
+          isPresented: $homeViewModel.isAddPolaroidModalPresented,
+          onDismiss: {
+            homeViewModel.selectedTab = .gallery
+          }
+        ) {
+          AddPolaroidView()
+        }
         SeparatorLineView()
       }
     }
-
     .environmentObject(pathModel)
   }
 }
@@ -71,11 +85,12 @@ private struct SeparatorLineView: View {
           )
         )
         .frame(height: 10)
-        .padding(.bottom, 60)
+        .padding(.bottom, 50)
     }
   }
 }
 
 #Preview {
   HomeView()
+    .environmentObject(GalleryViewModel())
 }

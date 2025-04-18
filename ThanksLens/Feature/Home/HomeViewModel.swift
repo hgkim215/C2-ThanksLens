@@ -9,9 +9,14 @@ import Foundation
 
 class HomeViewModel: ObservableObject {
   @Published var selectedTab: Tab
+  @Published var isAddPolaroidModalPresented: Bool
 
-  init(selectedTab: Tab = .gallery) {
+  init(
+    selectedTab: Tab = .gallery,
+    isAddPolaroidModalPresented: Bool = false
+  ) {
     self.selectedTab = selectedTab
+    self.isAddPolaroidModalPresented = isAddPolaroidModalPresented
   }
 }
 

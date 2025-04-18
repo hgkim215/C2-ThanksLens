@@ -9,9 +9,21 @@ import Foundation
 import SwiftData
 import SwiftUI
 
+/**
+ GalleryView에서 사용하는 폴라로이드 UI에 들어가는 데이터 모델
+  - parameters:
+    - id: UUID (고유 식별자)
+    - createdAt: Date (생성 날짜)
+    - modifiedAt: Date (수정 날짜)
+    - uploadedImage: Data (업로드한 이미지 데이터)
+    - titleText: String (제목)
+    - descriptionText: String (설명)
+  - methods:
+    - getUploadedImage(): Image? (업로드한 이미지를 SwiftUI Image로 변환하여 반환하는 메서드)
+ */
 @Model
 class ThanksPolaroid {
-  @Attribute(.unique) var id: UUID
+  var id: UUID
   var createdAt: Date
   var modifiedAt: Date
   var uploadedImage: Data

@@ -8,12 +8,23 @@
 import SwiftUI
 
 extension Font {
-  static func BMHANNAPro(size: CGFloat) -> Font {
-    return Font.custom("BMHANNAPro", size: size)
+  static func PoorStory(size: CGFloat) -> Font {
+    return Font.custom("PoorStory-Regular", size: size)
   }
 
-  static func BMHANNAPro(style: UIFont.TextStyle) -> Font {
-    let font = UIFont(name: "BMHANNAPro", size: UIFont.preferredFont(forTextStyle: style).pointSize) ?? UIFont.systemFont(ofSize: UIFont.preferredFont(forTextStyle: style).pointSize)
-    return Font(font as CTFont)
+  static func HiMelody(size: CGFloat) -> Font {
+    return Font.custom("HiMelody-Regular", size: size)
+  }
+
+  static func Gaegu_Light(size: CGFloat) -> Font {
+    return Font.custom("Gaegu-Light", size: size)
+  }
+
+  static func Gaegu_Regular(size: CGFloat) -> Font {
+    return Font.custom("Gaegu-Regular", size: size)
+  }
+
+  static func Gaegu_Bold(size: CGFloat) -> Font {
+    return Font.custom("Gaegu-Bold", size: size)
   }
 }

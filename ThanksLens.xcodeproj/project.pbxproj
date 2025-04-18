@@ -12,21 +12,23 @@
 		1463F1EA2DAF44540016BBE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */; };
 		1463F1EB2DAF44540016BBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E52DAF44540016BBE5 /* Assets.xcassets */; };
 		1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */; };
-		1463F1EF2DAF45570016BBE5 /* BMHANNAPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1EE2DAF45570016BBE5 /* BMHANNAPro.otf */; };
-		1463F1F02DAF45570016BBE5 /* BMHANNAPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1EE2DAF45570016BBE5 /* BMHANNAPro.otf */; };
-		1463F1F12DAF45570016BBE5 /* BMHANNAPro.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1EE2DAF45570016BBE5 /* BMHANNAPro.otf */; };
 		1463F1F62DAF5ABA0016BBE5 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1F52DAF5ABA0016BBE5 /* Color+Extensions.swift */; };
 		1463F1F82DAF5AC60016BBE5 /* Font+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1F72DAF5AC60016BBE5 /* Font+Extensions.swift */; };
 		1463F1FF2DAF9D690016BBE5 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1FE2DAF9D690016BBE5 /* HomeView.swift */; };
 		1463F2012DAF9D840016BBE5 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2002DAF9D840016BBE5 /* HomeViewModel.swift */; };
-		1463F2062DAFA3C00016BBE5 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2052DAFA3C00016BBE5 /* ProfileView.swift */; };
 		1463F2082DAFA3CF0016BBE5 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2072DAFA3CF0016BBE5 /* GalleryView.swift */; };
 		1463F20A2DAFA3DD0016BBE5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2092DAFA3DD0016BBE5 /* CalendarView.swift */; };
 		1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F20B2DAFA3E70016BBE5 /* GalleryViewModel.swift */; };
 		1463F20E2DAFA3F10016BBE5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F20D2DAFA3F10016BBE5 /* CalendarViewModel.swift */; };
-		1463F2102DAFA3FD0016BBE5 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F20F2DAFA3FD0016BBE5 /* ProfileViewModel.swift */; };
 		1463F2132DAFA4990016BBE5 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2122DAFA4990016BBE5 /* Path.swift */; };
 		1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2142DAFA4BB0016BBE5 /* PathType.swift */; };
+		14B3C6322DB122BB000D516F /* PoorStory-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */; };
+		14B3C6342DB159F0000D516F /* PolaroidCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6332DB159F0000D516F /* PolaroidCell.swift */; };
+		14B3C6362DB1FC0B000D516F /* HiMelody-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */; };
+		14B3C6392DB23384000D516F /* PolaroidAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6382DB23384000D516F /* PolaroidAddView.swift */; };
+		14B3C63D2DB245A7000D516F /* Gaegu-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63B2DB245A7000D516F /* Gaegu-Light.ttf */; };
+		14B3C63E2DB245A7000D516F /* Gaegu-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63A2DB245A7000D516F /* Gaegu-Bold.ttf */; };
+		14B3C63F2DB245A7000D516F /* Gaegu-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C63C2DB245A7000D516F /* Gaegu-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,20 +57,23 @@
 		1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1463F1E52DAF44540016BBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksLensApp.swift; sourceTree = "<group>"; };
-		1463F1EE2DAF45570016BBE5 /* BMHANNAPro.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BMHANNAPro.otf; sourceTree = "<group>"; };
-		1463F1F22DAF458B0016BBE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1463F1F52DAF5ABA0016BBE5 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
 		1463F1F72DAF5AC60016BBE5 /* Font+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extensions.swift"; sourceTree = "<group>"; };
 		1463F1FE2DAF9D690016BBE5 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1463F2002DAF9D840016BBE5 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		1463F2052DAFA3C00016BBE5 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		1463F2072DAFA3CF0016BBE5 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		1463F2092DAFA3DD0016BBE5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1463F20B2DAFA3E70016BBE5 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		1463F20D2DAFA3F10016BBE5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
-		1463F20F2DAFA3FD0016BBE5 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		1463F2122DAFA4990016BBE5 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		1463F2142DAFA4BB0016BBE5 /* PathType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathType.swift; sourceTree = "<group>"; };
+		14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoorStory-Regular.ttf"; sourceTree = "<group>"; };
+		14B3C6332DB159F0000D516F /* PolaroidCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidCell.swift; sourceTree = "<group>"; };
+		14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HiMelody-Regular.ttf"; sourceTree = "<group>"; };
+		14B3C6382DB23384000D516F /* PolaroidAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolaroidAddView.swift; sourceTree = "<group>"; };
+		14B3C63A2DB245A7000D516F /* Gaegu-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Bold.ttf"; sourceTree = "<group>"; };
+		14B3C63B2DB245A7000D516F /* Gaegu-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Light.ttf"; sourceTree = "<group>"; };
+		14B3C63C2DB245A7000D516F /* Gaegu-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gaegu-Regular.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -113,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				1463F1E92DAF44540016BBE5 /* ThanksLens */,
-				1463F1F22DAF458B0016BBE5 /* Info.plist */,
 				1401D8132DACFB2200D6EF66 /* ThanksLensTests */,
 				1401D81D2DACFB2200D6EF66 /* ThanksLensUITests */,
 				1401D7FF2DACFB2100D6EF66 /* Products */,
@@ -157,7 +161,11 @@
 		1463F1E42DAF44540016BBE5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				1463F1EE2DAF45570016BBE5 /* BMHANNAPro.otf */,
+				14B3C63A2DB245A7000D516F /* Gaegu-Bold.ttf */,
+				14B3C63B2DB245A7000D516F /* Gaegu-Light.ttf */,
+				14B3C63C2DB245A7000D516F /* Gaegu-Regular.ttf */,
+				14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */,
+				14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -213,6 +221,7 @@
 		1463F1FA2DAF9A800016BBE5 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				14B3C6332DB159F0000D516F /* PolaroidCell.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -242,7 +251,7 @@
 				1463F2002DAF9D840016BBE5 /* HomeViewModel.swift */,
 				1463F2022DAFA35E0016BBE5 /* Gallery */,
 				1463F2032DAFA3690016BBE5 /* Calendar */,
-				1463F2042DAFA38D0016BBE5 /* Profile */,
+				14B3C6372DB23362000D516F /* Polaroid */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -265,15 +274,6 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
-		1463F2042DAFA38D0016BBE5 /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				1463F2052DAFA3C00016BBE5 /* ProfileView.swift */,
-				1463F20F2DAFA3FD0016BBE5 /* ProfileViewModel.swift */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
 		1463F2112DAFA48A0016BBE5 /* Path */ = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +281,14 @@
 				1463F2142DAFA4BB0016BBE5 /* PathType.swift */,
 			);
 			path = Path;
+			sourceTree = "<group>";
+		};
+		14B3C6372DB23362000D516F /* Polaroid */ = {
+			isa = PBXGroup;
+			children = (
+				14B3C6382DB23384000D516F /* PolaroidAddView.swift */,
+			);
+			path = Polaroid;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,7 +408,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1463F1F02DAF45570016BBE5 /* BMHANNAPro.otf in Resources */,
+				14B3C6322DB122BB000D516F /* PoorStory-Regular.ttf in Resources */,
+				14B3C63D2DB245A7000D516F /* Gaegu-Light.ttf in Resources */,
+				14B3C63E2DB245A7000D516F /* Gaegu-Bold.ttf in Resources */,
+				14B3C63F2DB245A7000D516F /* Gaegu-Regular.ttf in Resources */,
+				14B3C6362DB1FC0B000D516F /* HiMelody-Regular.ttf in Resources */,
 				1463F1EA2DAF44540016BBE5 /* Preview Assets.xcassets in Resources */,
 				1463F1EB2DAF44540016BBE5 /* Assets.xcassets in Resources */,
 			);
@@ -410,7 +422,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1463F1F12DAF45570016BBE5 /* BMHANNAPro.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,7 +429,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1463F1EF2DAF45570016BBE5 /* BMHANNAPro.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,10 +444,10 @@
 				1463F20A2DAFA3DD0016BBE5 /* CalendarView.swift in Sources */,
 				1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */,
 				1463F20E2DAFA3F10016BBE5 /* CalendarViewModel.swift in Sources */,
+				14B3C6392DB23384000D516F /* PolaroidAddView.swift in Sources */,
 				1463F1F82DAF5AC60016BBE5 /* Font+Extensions.swift in Sources */,
 				1463F1FF2DAF9D690016BBE5 /* HomeView.swift in Sources */,
-				1463F2102DAFA3FD0016BBE5 /* ProfileViewModel.swift in Sources */,
-				1463F2062DAFA3C00016BBE5 /* ProfileView.swift in Sources */,
+				14B3C6342DB159F0000D516F /* PolaroidCell.swift in Sources */,
 				1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */,
 				14022A152DB09A1100F41590 /* ThanksPolaroid.swift in Sources */,
 				1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */,

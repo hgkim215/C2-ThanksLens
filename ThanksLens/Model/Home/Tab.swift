@@ -10,5 +10,5 @@ import Foundation
 enum Tab {
   case gallery
   case calendar
-  case profile
+  case addPolaroid
 }
