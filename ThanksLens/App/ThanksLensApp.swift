@@ -14,5 +14,6 @@ struct ThanksLensApp: App {
     WindowGroup {
       HomeView()
     }
+    .modelContainer(for: [ThanksPolaroid.self])
   }
 }
