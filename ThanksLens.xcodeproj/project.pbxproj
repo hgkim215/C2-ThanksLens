@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		14022A122DB0150F00F41590 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022A112DB0150F00F41590 /* Tab.swift */; };
 		14022A152DB09A1100F41590 /* ThanksPolaroid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14022A142DB09A1100F41590 /* ThanksPolaroid.swift */; };
+		142D0CB92DB399700056A9BF /* MaxLengthModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D0CB82DB399660056A9BF /* MaxLengthModifier.swift */; };
+		142D0CBB2DB39C210056A9BF /* TextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D0CBA2DB39C170056A9BF /* TextField+Extensions.swift */; };
+		142D0CBD2DB3C8D20056A9BF /* AddPolaroidViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142D0CBC2DB3C8C80056A9BF /* AddPolaroidViewModel.swift */; };
 		1463F1EA2DAF44540016BBE5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */; };
 		1463F1EB2DAF44540016BBE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1463F1E52DAF44540016BBE5 /* Assets.xcassets */; };
 		1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */; };
@@ -53,6 +56,9 @@
 		1401D81A2DACFB2200D6EF66 /* ThanksLensUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThanksLensUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14022A112DB0150F00F41590 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		14022A142DB09A1100F41590 /* ThanksPolaroid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksPolaroid.swift; sourceTree = "<group>"; };
+		142D0CB82DB399660056A9BF /* MaxLengthModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxLengthModifier.swift; sourceTree = "<group>"; };
+		142D0CBA2DB39C170056A9BF /* TextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extensions.swift"; sourceTree = "<group>"; };
+		142D0CBC2DB3C8C80056A9BF /* AddPolaroidViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPolaroidViewModel.swift; sourceTree = "<group>"; };
 		1463F1E22DAF44540016BBE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1463F1E52DAF44540016BBE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksLensApp.swift; sourceTree = "<group>"; };
@@ -148,6 +154,21 @@
 			path = Gallery;
 			sourceTree = "<group>";
 		};
+		142D0CB62DB399380056A9BF /* Component */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		142D0CB72DB3994C0056A9BF /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				142D0CB82DB399660056A9BF /* MaxLengthModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
 		1463F1E32DAF44540016BBE5 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,7 +203,7 @@
 			children = (
 				1463F1F92DAF9A700016BBE5 /* App */,
 				1463F1E62DAF44540016BBE5 /* Resource */,
-				1463F1FA2DAF9A800016BBE5 /* Component */,
+				142D0CB62DB399380056A9BF /* Component */,
 				1463F1F32DAF5A7A0016BBE5 /* Core */,
 				1463F1FB2DAF9AB20016BBE5 /* Feature */,
 				1463F1FC2DAF9AB80016BBE5 /* Model */,
@@ -195,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				1463F1F42DAF5A8D0016BBE5 /* Extension */,
+				142D0CB72DB3994C0056A9BF /* Modifier */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -202,6 +224,7 @@
 		1463F1F42DAF5A8D0016BBE5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				142D0CBA2DB39C170056A9BF /* TextField+Extensions.swift */,
 				1463F1F72DAF5AC60016BBE5 /* Font+Extensions.swift */,
 				1463F1F52DAF5ABA0016BBE5 /* Color+Extensions.swift */,
 			);
@@ -214,13 +237,6 @@
 				1463F1E82DAF44540016BBE5 /* ThanksLensApp.swift */,
 			);
 			path = App;
-			sourceTree = "<group>";
-		};
-		1463F1FA2DAF9A800016BBE5 /* Component */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Component;
 			sourceTree = "<group>";
 		};
 		1463F1FB2DAF9AB20016BBE5 /* Feature */ = {
@@ -284,6 +300,7 @@
 			isa = PBXGroup;
 			children = (
 				14B3C6382DB23384000D516F /* AddPolaroidView.swift */,
+				142D0CBC2DB3C8C80056A9BF /* AddPolaroidViewModel.swift */,
 			);
 			path = Polaroid;
 			sourceTree = "<group>";
@@ -445,11 +462,14 @@
 				1463F1F82DAF5AC60016BBE5 /* Font+Extensions.swift in Sources */,
 				1463F1FF2DAF9D690016BBE5 /* HomeView.swift in Sources */,
 				1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */,
+				142D0CBB2DB39C210056A9BF /* TextField+Extensions.swift in Sources */,
 				14022A152DB09A1100F41590 /* ThanksPolaroid.swift in Sources */,
 				1463F2152DAFA4BB0016BBE5 /* PathType.swift in Sources */,
 				1463F2132DAFA4990016BBE5 /* Path.swift in Sources */,
 				1463F1F62DAF5ABA0016BBE5 /* Color+Extensions.swift in Sources */,
 				14022A122DB0150F00F41590 /* Tab.swift in Sources */,
+				142D0CBD2DB3C8D20056A9BF /* AddPolaroidViewModel.swift in Sources */,
+				142D0CB92DB399700056A9BF /* MaxLengthModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

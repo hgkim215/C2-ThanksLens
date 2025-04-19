@@ -11,6 +11,7 @@ struct HomeView: View {
   @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel()
   @StateObject private var galleryViewModel = GalleryViewModel()
+  @StateObject private var addPolaroidViewModel = AddPolarioidViewModel()
 
   var body: some View {
     NavigationStack(path: $pathModel.paths) {
@@ -61,7 +62,10 @@ struct HomeView: View {
           }
         ) {
           AddPolaroidView()
+            .environmentObject(AddPolarioidViewModel())
+            .presentationDragIndicator(.visible)
         }
+
         SeparatorLineView()
       }
     }
