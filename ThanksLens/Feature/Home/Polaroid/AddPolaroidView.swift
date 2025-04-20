@@ -15,34 +15,62 @@ enum FieldType {
 }
 
 struct AddPolaroidView: View {
-  @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
-  @State var selectedImage: UIImage?
+  @State private var selectedImage: UIImage?
+  @State private var titleText: String = ""
+  @State private var descriptionText: String = ""
+
+  @State private var showAlert: Bool = false
+  @State private var alertMessage: String = ""
 
   var body: some View {
     ScrollView {
       VStack {
         PhotoUploadView(selectedImage: $selectedImage)
+          .foregroundStyle(.customP1)
 
         Spacer(minLength: 32)
 
-        TitleTextFieldView()
+        TitleTextFieldView(titleText: $titleText)
+          .foregroundStyle(.customP1)
 
         Spacer(minLength: 32)
 
-        DescriptionTextFieldView()
-          .padding(.bottom, 24)
+        DescriptionTextFieldView(descriptionText: $descriptionText)
+          .foregroundStyle(.customP1)
+
+        Spacer(minLength: 48)
+
+        BottomButtonView(
+          selectedImage: $selectedImage,
+          titleText: $titleText,
+          descriptionText: $descriptionText,
+          showAlert: $showAlert,
+          alertMessage: $alertMessage
+        )
+        .padding(.bottom, 24)
       }
       .padding(32)
     }
-    .foregroundStyle(.customP1)
     .background(.customWhite)
+    .alert(isPresented: $showAlert) {
+      Alert(
+        title: Text("허거덩!")
+          .font(.PoorStory(size: 20))
+          .foregroundStyle(.customP1),
+
+        message: Text(alertMessage)
+          .font(.PoorStory(size: 16))
+          .foregroundStyle(.customP1),
+
+        dismissButton: .default(Text("확인"))
+      )
+    }
   }
 }
 
 // MARK: - 사진 업로드뷰
 
 private struct PhotoUploadView: View {
-  @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
   @Binding var selectedImage: UIImage?
 
   fileprivate var body: some View {
@@ -104,8 +132,7 @@ private struct PhotoUploadView: View {
 // MARK: - 감사 한 줄 텍스트필드뷰
 
 private struct TitleTextFieldView: View {
-  @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
-  @State private var titleText: String = ""
+  @Binding var titleText: String
 
   fileprivate var body: some View {
     VStack {
@@ -129,8 +156,7 @@ private struct TitleTextFieldView: View {
 // MARK: - 감사 상세 텍스트필드뷰
 
 private struct DescriptionTextFieldView: View {
-  @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
-  @State private var descriptionText: String = ""
+  @Binding var descriptionText: String
 
   fileprivate var body: some View {
     VStack {
@@ -150,7 +176,58 @@ private struct DescriptionTextFieldView: View {
   }
 }
 
+// MARK: - 하단 버튼뷰
+
+private struct BottomButtonView: View {
+  @Environment(\.modelContext) private var modelContext
+  @Environment(\.dismiss) private var dismiss
+
+  @Binding var selectedImage: UIImage?
+  @Binding var titleText: String
+  @Binding var descriptionText: String
+
+  @Binding var showAlert: Bool
+  @Binding var alertMessage: String
+
+  fileprivate var body: some View {
+    HStack {
+      CustomCancelButton(
+        label: "취소",
+        action: {
+          dismiss()
+        }
+      )
+
+      Spacer()
+
+      CustomPrimaryButton(
+        label: "인화",
+        logo: "camera.viewfinder",
+        action: {
+          if selectedImage == nil {
+            alertMessage = "사진을 업로드해주셔야 해요..!"
+            showAlert = true
+          } else if titleText.isEmpty {
+            alertMessage = "감사 한 줄을 입력해주셔야 해요..!"
+            showAlert = true
+          } else {
+            let polaroid = ThanksPolaroid(
+              uploadedImage: selectedImage!.jpegData(compressionQuality: 0.8)!,
+              titleText: titleText,
+              descriptionText: descriptionText
+            )
+
+            modelContext.insert(polaroid)
+            try! modelContext.save()
+
+            dismiss()
+          }
+        }
+      )
+    }
+  }
+}
+
 #Preview {
   AddPolaroidView()
-    .environmentObject(AddPolarioidViewModel())
 }

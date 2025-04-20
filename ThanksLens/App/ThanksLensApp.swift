@@ -13,7 +13,7 @@ struct ThanksLensApp: App {
   var body: some Scene {
     WindowGroup {
       HomeView()
+        .modelContainer(for: [ThanksPolaroid.self])
     }
-    .modelContainer(for: [ThanksPolaroid.self])
   }
 }

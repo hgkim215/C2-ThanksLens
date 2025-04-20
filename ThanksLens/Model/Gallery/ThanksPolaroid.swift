@@ -45,11 +45,4 @@ class ThanksPolaroid {
     self.titleText = titleText
     self.descriptionText = descriptionText
   }
-
-  func getUploadedImage() -> Image? {
-    if let uiImage = UIImage(data: uploadedImage) {
-      return Image(uiImage: uiImage)
-    }
-    return nil
-  }
 }
