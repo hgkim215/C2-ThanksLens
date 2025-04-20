@@ -21,7 +21,7 @@ import SwiftUI
  */
 public struct ThanksPhotoPicker<Content: View>: View {
   @State private var selectedPhoto: PhotosPickerItem?
-  @Binding private var selctedImage: UIImage?
+  @Binding private var selectedImage: UIImage?
   @Binding private var isPresentedError: Bool
   private let matching: PHPickerFilter
   private let photoLibrary: PHPhotoLibrary
@@ -36,7 +36,7 @@ public struct ThanksPhotoPicker<Content: View>: View {
     content: @escaping () -> Content
   ) {
     self.selectedPhoto = selectedPhoto
-    _selctedImage = selctedImage
+    _selectedImage = selctedImage
     _isPresentedError = isPresentedError
     self.matching = matching
     self.photoLibrary = photoLibrary
@@ -64,7 +64,7 @@ extension ThanksPhotoPicker {
       case let .success(data):
         if let data = data, let loadedImage = UIImage(data: data) {
           DispatchQueue.main.async {
-            self.selctedImage = loadedImage
+            self.selectedImage = loadedImage
           }
           print("Image loaded successfully")
         }
