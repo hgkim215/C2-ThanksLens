@@ -211,16 +211,21 @@ private struct BottomButtonView: View {
             alertMessage = "감사 한 줄을 입력해주셔야 해요..!"
             showAlert = true
           } else {
-            let polaroid = ThanksPolaroid(
-              uploadedImage: selectedImage!.jpegData(compressionQuality: 0.8)!,
-              titleText: titleText,
-              descriptionText: descriptionText
-            )
+            if let imageData = selectedImage?.jpegData(compressionQuality: 0.8) {
+              let polaroid = ThanksPolaroid(
+                uploadedImage: imageData,
+                titleText: titleText,
+                descriptionText: descriptionText
+              )
 
-            modelContext.insert(polaroid)
-            try! modelContext.save()
+              modelContext.insert(polaroid)
+              try! modelContext.save()
 
-            dismiss()
+              dismiss()
+            } else {
+              alertMessage = "사진 데이터를 처리하는 데 문제가 발생했어요..!"
+              showAlert = true
+            }
           }
         }
       )
