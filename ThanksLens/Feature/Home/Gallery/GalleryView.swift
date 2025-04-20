@@ -5,13 +5,17 @@
 //  Created by 김현기 on 4/16/25.
 //
 
+import SwiftData
 import SwiftUI
 
 // MARK: - 갤러리뷰 (메인홈탭)
 
 /// 갤러리 화면을 나타내는 뷰로, 상단 날짜 선택 뷰와 폴라로이드 리스트를 포함합니다.
 struct GalleryView: View {
+  @Environment(\.modelContext) private var modelContext
   @EnvironmentObject private var galleryViewModel: GalleryViewModel
+
+  @Query var thanksPolaroids: [ThanksPolaroid]
 
   let columns = [GridItem(.flexible()), GridItem(.flexible())]
 
@@ -34,6 +38,9 @@ struct GalleryView: View {
         }
 
         Spacer()
+      }
+      .onAppear {
+        galleryViewModel.updatePolaroids(with: thanksPolaroids)
       }
     }
   }
@@ -76,7 +83,7 @@ private struct TopDateSelectionView: View {
         }
       )
     }
-    .padding(.vertical, 24)
+    .padding(.vertical, 16)
     .padding(.horizontal, 32)
 
     Spacer()
@@ -93,33 +100,44 @@ private struct PolaroidCell: View {
     ZStack {
       Color(.customWhite)
         .shadow(color: .customBlack.opacity(0.2), radius: 1, x: 0, y: 4)
-      VStack {
-        Image("mock_image")
-          .resizable()
-          .aspectRatio(3 / 4, contentMode: .fit)
-          .overlay(
-            Rectangle()
-              .stroke(Color.customBlack, lineWidth: 2)
-              .blur(radius: 1)
-              .offset(x: 0, y: 4)
-              .mask(
-                Rectangle()
-                  .fill(LinearGradient(
-                    colors: [.black.opacity(0.2), .clear],
-                    startPoint: .top,
-                    endPoint: .bottom
-                  ))
-              )
-          )
-          .padding(.horizontal, 12)
-          .padding(.top, 12)
+      GeometryReader { geometry in
+        let width = geometry.size.width
+        let imageHeight = width * 4 / 3
 
-        Text(polaroid.titleText)
-          .foregroundColor(.customBlack)
-          .font(.Gaegu_Bold(size: 14))
-          .padding(12)
+        VStack {
+          Image(uiImage: UIImage(data: polaroid.uploadedImage) ?? UIImage(named: "mock_image")!)
+            .resizable()
+            .scaledToFill()
+            .frame(width: width - 24, height: imageHeight)
+            .clipped()
+            .overlay(
+              Rectangle()
+                .stroke(Color.customBlack, lineWidth: 2)
+                .blur(radius: 1)
+                .offset(x: 0, y: 4)
+                .mask(
+                  Rectangle()
+                    .fill(LinearGradient(
+                      colors: [.black.opacity(0.2), .clear],
+                      startPoint: .top,
+                      endPoint: .bottom
+                    ))
+                )
+            )
+            .padding(.horizontal, 12)
+            .padding(.top, 12)
+
+          Text(polaroid.titleText)
+            .foregroundColor(.customBlack)
+            .font(.Gaegu_Bold(size: 14))
+            .padding(.horizontal, 12)
+            .padding(.vertical, 6)
+            .multilineTextAlignment(.leading)
+            .fixedSize(horizontal: false, vertical: true)
+        }
       }
     }
+    .frame(width: UIScreen.main.bounds.width / 2 - 24, height: UIScreen.main.bounds.width * 3 / 4)
   }
 }
 
