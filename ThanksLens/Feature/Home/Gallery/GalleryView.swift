@@ -92,11 +92,25 @@ private struct PolaroidCell: View {
   fileprivate var body: some View {
     ZStack {
       Color(.customWhite)
+        .shadow(color: .customBlack.opacity(0.2), radius: 1, x: 0, y: 4)
       VStack {
         Image("mock_image")
           .resizable()
-          .frame(width: 150, height: 200)
           .aspectRatio(3 / 4, contentMode: .fit)
+          .overlay(
+            Rectangle()
+              .stroke(Color.customBlack, lineWidth: 2)
+              .blur(radius: 1)
+              .offset(x: 0, y: 4)
+              .mask(
+                Rectangle()
+                  .fill(LinearGradient(
+                    colors: [.black.opacity(0.2), .clear],
+                    startPoint: .top,
+                    endPoint: .bottom
+                  ))
+              )
+          )
           .padding(.horizontal, 12)
           .padding(.top, 12)
 
