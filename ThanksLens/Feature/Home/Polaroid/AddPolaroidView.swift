@@ -16,11 +16,12 @@ enum FieldType {
 
 struct AddPolaroidView: View {
   @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
+  @State var selectedImage: UIImage?
 
   var body: some View {
     ScrollView {
       VStack {
-        PhotoUploadView()
+        PhotoUploadView(selectedImage: $selectedImage)
 
         Spacer(minLength: 32)
 
@@ -41,41 +42,60 @@ struct AddPolaroidView: View {
 // MARK: - 사진 업로드뷰
 
 private struct PhotoUploadView: View {
+  @EnvironmentObject private var addPolaroidViewModel: AddPolarioidViewModel
+  @Binding var selectedImage: UIImage?
+
   fileprivate var body: some View {
-    ZStack {
-      Rectangle()
-        .fill(.customGray2)
-        .aspectRatio(
-          3 / 4,
-          contentMode: .fit
-        )
-      VStack {
-        Image(systemName: "camera")
-          .resizable()
-          .scaledToFit()
-          .frame(width: 32)
-          .fontWeight(.semibold)
-          .padding(.bottom, 8)
-        Text("사진 업로드")
-          .font(.PoorStory(size: 18))
-      }
-      .padding(.top, 16)
-      .foregroundStyle(.customP1)
-    }
-    .overlay(
-      Rectangle()
-        .stroke(Color.customBlack, lineWidth: 2)
-        .blur(radius: 1)
-        .offset(x: 0, y: 4)
-        .mask(
+    GeometryReader { geometry in
+      let width = geometry.size.width
+      let imageHeight = width * 4 / 3
+
+      ThanksPhotoPicker(selctedImage: $selectedImage) {
+        ZStack {
+          if selectedImage == nil {
+            Rectangle()
+              .fill(.customGray2)
+              .frame(width: width, height: imageHeight)
+
+          } else if let image = selectedImage {
+            Image(uiImage: image)
+              .resizable()
+              .scaledToFill()
+              .frame(width: width, height: imageHeight)
+              .clipped()
+          }
+          if selectedImage == nil {
+            VStack {
+              Image(systemName: "camera")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 32)
+                .fontWeight(.semibold)
+                .padding(.bottom, 8)
+              Text("사진 업로드")
+                .font(.PoorStory(size: 18))
+            }
+            .padding(.top, 16)
+            .foregroundStyle(.customP1)
+          }
+        }
+        .overlay(
           Rectangle()
-            .fill(LinearGradient(
-              colors: [.black.opacity(0.3), .clear],
-              startPoint: .top,
-              endPoint: .bottom
-            ))
+            .stroke(Color.customBlack, lineWidth: 2)
+            .blur(radius: 1)
+            .offset(x: 0, y: 4)
+            .mask(
+              Rectangle()
+                .fill(LinearGradient(
+                  colors: [.black.opacity(0.3), .clear],
+                  startPoint: .top,
+                  endPoint: .bottom
+                ))
+            )
         )
-    )
+      }
+    }
+    .frame(height: UIScreen.main.bounds.width + 32)
 
     Spacer()
   }

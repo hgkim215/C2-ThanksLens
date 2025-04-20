@@ -96,7 +96,6 @@ private struct PolaroidCell: View {
       VStack {
         Image("mock_image")
           .resizable()
-          .frame(width: 150, height: 200)
           .aspectRatio(3 / 4, contentMode: .fit)
           .overlay(
             Rectangle()

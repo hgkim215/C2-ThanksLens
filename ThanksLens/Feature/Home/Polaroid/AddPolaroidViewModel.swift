@@ -8,12 +8,4 @@
 import PhotosUI
 import SwiftUI
 
-class AddPolarioidViewModel: ObservableObject {
-  @Published var selectImage: PhotosPickerItem?
-
-  init(
-    selectImage: PhotosPickerItem? = nil
-  ) {
-    self.selectImage = selectImage
-  }
-}
+class AddPolarioidViewModel: ObservableObject {}
