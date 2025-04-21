@@ -29,8 +29,14 @@ struct GalleryView: View {
 
         ScrollView {
           LazyVGrid(columns: columns, spacing: 24) {
-            ForEach(galleryViewModel.thanksPolaroids, id: \.self) { polaroid in
+            ForEach(Array(thanksPolaroids.enumerated()), id: \.1) { index, polaroid in
               PolaroidCell(polaroid: polaroid)
+                .onTapGesture {
+                  print("폴라로이드 선택됨, index: \(index)")
+                  galleryViewModel.isDetailPolaroidModalPresented = true
+                  galleryViewModel.selectedPolaroid = polaroid
+                  galleryViewModel.selectedIndex = index
+                }
             }
           }
           .padding(.horizontal, 16)
@@ -39,8 +45,9 @@ struct GalleryView: View {
 
         Spacer()
       }
-      .onAppear {
-        galleryViewModel.updatePolaroids(with: thanksPolaroids)
+      .sheet(isPresented: $galleryViewModel.isDetailPolaroidModalPresented) {
+        DetailPolaroidView()
+          .presentationDragIndicator(.visible)
       }
     }
   }

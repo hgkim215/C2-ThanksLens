@@ -10,7 +10,15 @@ import SwiftUI
 struct CustomPrimaryButton: View {
   let label: String
   let logo: String
+  let width: CGFloat
   let action: () -> Void
+
+  init(label: String, logo: String, width: CGFloat = 160, action: @escaping () -> Void) {
+    self.label = label
+    self.logo = logo
+    self.width = width
+    self.action = action
+  }
 
   var body: some View {
     Button(
@@ -19,7 +27,7 @@ struct CustomPrimaryButton: View {
         Label(label, systemImage: logo)
       }
     )
-    .frame(width: 160, height: 70)
+    .frame(width: width, height: 70)
     .foregroundStyle(.customWhite)
     .background(.customP2)
     .cornerRadius(10)

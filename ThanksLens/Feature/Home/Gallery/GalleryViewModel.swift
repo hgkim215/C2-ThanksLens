@@ -12,28 +12,30 @@ import SwiftUI
 class GalleryViewModel: ObservableObject {
   /// @Published는 SwiftUI에서 사용되는 프로퍼티 래퍼로, 해당 프로퍼티가 변경될 때마다 뷰를 자동으로 업데이트합니다.
   @Published var selectedDate: Date
-  @Published var thanksPolaroids: [ThanksPolaroid] = [
-    ThanksPolaroid(uploadedImage: Data(), titleText: "dmdkdkdkdkkd", descriptionText: ""),
-    ThanksPolaroid(uploadedImage: Data(), titleText: "dmdkdkdkdkkd", descriptionText: ""),
-    ThanksPolaroid(uploadedImage: Data(), titleText: "dmdkdkdkdkkd", descriptionText: ""),
-  ]
+
+  @Published var isDetailPolaroidModalPresented: Bool
+  @Published var selectedPolaroid: ThanksPolaroid?
+  @Published var selectedIndex: Int?
 
   init(
-    selectedDate: Date = Date.now
+    selectedDate: Date = Date.now,
+    isDetailPolaroidModalPresented: Bool = false
   ) {
     self.selectedDate = selectedDate
+    self.isDetailPolaroidModalPresented = isDetailPolaroidModalPresented
   }
 }
 
 extension GalleryViewModel {
-  func formattedDateString(from date: Date) -> String {
+  func formattedDateString(from date: Date, isDetailView: Bool = false) -> String {
     let formatter = DateFormatter()
-    formatter.dateFormat = "yyyy.MM.dd"
-    return formatter.string(from: date)
-  }
+    if isDetailView {
+      formatter.dateFormat = "yyyy.MM.dd (E)"
+    } else {
+      formatter.dateFormat = "yyyy.MM.dd"
+    }
 
-  func updatePolaroids(with newPolaroids: [ThanksPolaroid]) {
-    thanksPolaroids = newPolaroids
-    print("Update Polaroids Successfully.")
+    formatter.locale = Locale(identifier: "ko_KR")
+    return formatter.string(from: date)
   }
 }
