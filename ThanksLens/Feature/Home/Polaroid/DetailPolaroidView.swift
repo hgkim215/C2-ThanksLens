@@ -65,8 +65,13 @@ struct DetailPolaroidView: View {
                 role: .destructive,
                 action: {
                   modelContext.delete(galleryViewModel.selectedPolaroid!)
-                  try! modelContext.save()
-                  dismiss()
+                  do {
+                    try modelContext.save()
+                    dismiss()
+                  } catch {
+                    alertMessage = "저장 중 오류가 발생했어요. 다시 시도해주세요."
+                    showAlert = true
+                  }
                 },
                 label: {
                   Label("삭제", systemImage: "trash")
@@ -281,8 +286,13 @@ private struct BottomButtonView: View {
           galleryViewModel.selectedPolaroid?.uploadedImage = selectedImage!.jpegData(compressionQuality: 1)!
           galleryViewModel.selectedPolaroid?.modifiedAt = Date.now
 
-          try! modelContext.save()
-          dismiss()
+          do {
+            try modelContext.save()
+            dismiss()
+          } catch {
+            alertMessage = "저장 중 오류가 발생했어요. 다시 시도해주세요."
+            showAlert = true
+          }
         }
       }
     )

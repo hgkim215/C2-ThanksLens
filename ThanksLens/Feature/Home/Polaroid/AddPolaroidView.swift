@@ -228,9 +228,13 @@ private struct BottomButtonView: View {
               )
 
               modelContext.insert(polaroid)
-              try! modelContext.save()
-
-              dismiss()
+              do {
+                try modelContext.save()
+                dismiss()
+              } catch {
+                alertMessage = "저장 중 오류가 발생했어요. 다시 시도해주세요."
+                showAlert = true
+              }
             } else {
               alertMessage = "사진 데이터를 처리하는 데 문제가 발생했어요..!"
               showAlert = true
