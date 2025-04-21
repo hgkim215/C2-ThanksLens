@@ -19,7 +19,7 @@ import SwiftUI
     - photoLibrary: 사진 라이브러리 접근을 위한 PHPhotoLibrary 타입의 인스턴스 변수
     - content: 제네릭하게 받아온 View
  */
-public struct ThanksPhotoPicker<Content: View>: View {
+struct ThanksPhotoPicker<Content: View>: View {
   @State private var selectedPhoto: PhotosPickerItem?
   @Binding private var selectedImage: UIImage?
   @Binding private var isPresentedError: Bool
