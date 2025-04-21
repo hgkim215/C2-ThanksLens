@@ -10,66 +10,62 @@ import SwiftUI
 struct HomeView: View {
   @Environment(\.modelContext) private var modelContext
 
-  @StateObject private var pathModel = PathModel()
   @StateObject private var homeViewModel = HomeViewModel()
   @StateObject private var galleryViewModel = GalleryViewModel()
 
   var body: some View {
-    NavigationStack(path: $pathModel.paths) {
-      ZStack {
-        TabView(selection: $homeViewModel.selectedTab) {
-          GalleryView()
-            .tabItem {
-              Image(
-                homeViewModel.selectedTab == .gallery
-                  ? "galleryIcon_selected"
-                  : "galleryIcon"
-              )
-            }
-            .tag(Tab.gallery)
-            .environmentObject(galleryViewModel)
-
-          GalleryView()
-            .tabItem {
-              Image(
-                homeViewModel.selectedTab == .addPolaroid
-                  ? "addIcon_selected"
-                  : "addIcon"
-              )
-            }
-            .tag(Tab.addPolaroid)
-            .environmentObject(galleryViewModel)
-
-          CalendarView()
-            .tabItem {
-              Image(
-                homeViewModel.selectedTab == .calendar
-                  ? "calendarIcon_selected"
-                  : "calendarIcon"
-              )
-            }
-            .tag(Tab.calendar)
-        }
-        .environmentObject(homeViewModel)
-        .onChange(of: homeViewModel.selectedTab) {
-          if homeViewModel.selectedTab == .addPolaroid {
-            homeViewModel.isAddPolaroidModalPresented = true
+    ZStack {
+      TabView(selection: $homeViewModel.selectedTab) {
+        GalleryView()
+          .tabItem {
+            Image(
+              homeViewModel.selectedTab == .gallery
+                ? "galleryIcon_selected"
+                : "galleryIcon"
+            )
           }
-        }
-        .sheet(
-          isPresented: $homeViewModel.isAddPolaroidModalPresented,
-          onDismiss: {
-            homeViewModel.selectedTab = .gallery
-          }
-        ) {
-          AddPolaroidView()
-            .presentationDragIndicator(.visible)
-        }
+          .tag(Tab.gallery)
+          .environmentObject(galleryViewModel)
 
-        SeparatorLineView()
+        GalleryView()
+          .tabItem {
+            Image(
+              homeViewModel.selectedTab == .addPolaroid
+                ? "addIcon_selected"
+                : "addIcon"
+            )
+          }
+          .tag(Tab.addPolaroid)
+          .environmentObject(galleryViewModel)
+
+        CalendarView()
+          .tabItem {
+            Image(
+              homeViewModel.selectedTab == .calendar
+                ? "calendarIcon_selected"
+                : "calendarIcon"
+            )
+          }
+          .tag(Tab.calendar)
       }
+      .environmentObject(homeViewModel)
+      .onChange(of: homeViewModel.selectedTab) {
+        if homeViewModel.selectedTab == .addPolaroid {
+          homeViewModel.isAddPolaroidModalPresented = true
+        }
+      }
+      .sheet(
+        isPresented: $homeViewModel.isAddPolaroidModalPresented,
+        onDismiss: {
+          homeViewModel.selectedTab = .gallery
+        }
+      ) {
+        AddPolaroidView()
+          .presentationDragIndicator(.visible)
+      }
+
+      SeparatorLineView()
     }
-    .environmentObject(pathModel)
   }
 }
 

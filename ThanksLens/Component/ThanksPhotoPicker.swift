@@ -23,6 +23,7 @@ struct ThanksPhotoPicker<Content: View>: View {
   @State private var selectedPhoto: PhotosPickerItem?
   @Binding private var selectedImage: UIImage?
   @Binding private var isPresentedError: Bool
+  @Binding private var isEditMode: Bool
   private let matching: PHPickerFilter
   private let photoLibrary: PHPhotoLibrary
   private let content: () -> Content
@@ -31,6 +32,7 @@ struct ThanksPhotoPicker<Content: View>: View {
     selectedPhoto: PhotosPickerItem = PhotosPickerItem(itemIdentifier: ""),
     selctedImage: Binding<UIImage?>,
     isPresentedError: Binding<Bool> = .constant(false),
+    isEditMode: Binding<Bool> = .constant(true),
     matching: PHPickerFilter = .images,
     photoLibrary: PHPhotoLibrary = .shared(),
     content: @escaping () -> Content
@@ -38,6 +40,7 @@ struct ThanksPhotoPicker<Content: View>: View {
     self.selectedPhoto = selectedPhoto
     _selectedImage = selctedImage
     _isPresentedError = isPresentedError
+    _isEditMode = isEditMode
     self.matching = matching
     self.photoLibrary = photoLibrary
     self.content = content
@@ -51,6 +54,7 @@ struct ThanksPhotoPicker<Content: View>: View {
     ) {
       content()
     }
+    .disabled(!isEditMode)
     .onChange(of: selectedPhoto) {
       handleSelectedPhoto(selectedPhoto)
     }

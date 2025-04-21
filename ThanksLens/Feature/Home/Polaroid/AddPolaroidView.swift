@@ -10,10 +10,6 @@ import SwiftUI
 
 // MARK: - 폴라로이드추가뷰
 
-enum FieldType {
-  case title, description
-}
-
 struct AddPolaroidView: View {
   @State private var selectedImage: UIImage?
   @State private var titleText: String = ""
@@ -105,6 +101,19 @@ private struct PhotoUploadView: View {
             }
             .padding(.top, 16)
             .foregroundStyle(.customP1)
+          } else {
+            VStack {
+              Spacer()
+              HStack {
+                Spacer()
+                Image(systemName: "photo.circle")
+                  .resizable()
+                  .scaledToFit()
+                  .frame(width: 32, height: 32)
+                  .foregroundStyle(.customWhite)
+                  .padding(16)
+              }
+            }
           }
         }
         .overlay(
@@ -219,9 +228,13 @@ private struct BottomButtonView: View {
               )
 
               modelContext.insert(polaroid)
-              try! modelContext.save()
-
-              dismiss()
+              do {
+                try modelContext.save()
+                dismiss()
+              } catch {
+                alertMessage = "저장 중 오류가 발생했어요. 다시 시도해주세요."
+                showAlert = true
+              }
             } else {
               alertMessage = "사진 데이터를 처리하는 데 문제가 발생했어요..!"
               showAlert = true
