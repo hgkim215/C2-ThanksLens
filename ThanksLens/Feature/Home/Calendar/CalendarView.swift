@@ -5,11 +5,14 @@
 //  Created by 김현기 on 4/16/25.
 //
 
+import SwiftData
 import SwiftUI
 
 struct CalendarView: View {
-  @State private var selectedDate = Date()
-  @State private var selectedImage: UIImage?
+  @Environment(\.modelContext) private var modelContext
+  @StateObject private var calendarViewModel = CalendarViewModel()
+
+  @State private var isUploadSheetPresented: Bool = false
 
   var body: some View {
     ZStack {
@@ -20,49 +23,40 @@ struct CalendarView: View {
           let width = geometry.size.width
           let imageHeight = width
 
-          ThanksPhotoPicker(selctedImage: $selectedImage) {
-            ZStack {
-              if let image = selectedImage {
-                Image(uiImage: image)
-                  .resizable()
-                  .scaledToFill()
-                  .frame(width: width, height: imageHeight)
-                  .clipped()
-              }
-              if selectedImage == nil {
-                Image("calendar_image")
-                  .frame(width: width, height: imageHeight)
-              }
-            }
-            .overlay(
-              Rectangle()
-                .stroke(Color.customBlack, lineWidth: 2)
-                .blur(radius: 1)
-                .offset(x: 0, y: 4)
-                .mask(
-                  Rectangle()
-                    .fill(LinearGradient(
-                      colors: [.black.opacity(0.3), .clear],
-                      startPoint: .top,
-                      endPoint: .bottom
-                    ))
-                )
-            )
+          if let image = calendarViewModel.selectedImage {
+            Image(uiImage: image)
+              .resizable()
+              .scaledToFill()
+              .frame(width: width, height: imageHeight)
+              .clipped()
+          } else {
+            Image("calendar_image")
+              .resizable()
+              .scaledToFill()
+              .frame(width: width, height: imageHeight)
+              .clipped()
           }
         }
-        .frame(height: UIScreen.main.bounds.width - 16)
-        .ignoresSafeArea(edges: .top)
+        .frame(height: UIScreen.main.bounds.width - 48)
+        .background(.black)
+        .onAppear {
+          calendarViewModel.loadMonthlyImage(context: modelContext)
+        }
+        .onTapGesture {
+          print("Tapped on calendar image")
+          isUploadSheetPresented = true
+        }
+        .sheet(isPresented: $isUploadSheetPresented) {
+          UploadMonthlyImageView(calendarViewModel: calendarViewModel)
+            .presentationDragIndicator(.visible)
+            .presentationDetents([.fraction(0.7)])
+        }
 
-        DatePicker(
-          "날짜를 선택하세요",
-          selection: $selectedDate,
-          displayedComponents: [.date]
-        )
-        .datePickerStyle(.graphical)
-        .tint(.customP1)
+        ThanksCalendarView(calendarViewModel: calendarViewModel)
+          .padding(.top)
       }
-      .padding(.horizontal, 16)
-      .padding(.vertical, 32)
+      .padding(.horizontal, 24)
+      .padding(.bottom, 16)
     }
   }
 }

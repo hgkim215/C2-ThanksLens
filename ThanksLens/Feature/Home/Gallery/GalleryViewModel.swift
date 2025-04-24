@@ -28,6 +28,10 @@ class GalleryViewModel: ObservableObject {
 
 extension GalleryViewModel {
   func formattedDateString(from date: Date, isDetailView: Bool = false) -> String {
+    if Calendar.current.isDateInToday(date) {
+      return "오늘"
+    }
+
     let formatter = DateFormatter()
     if isDetailView {
       formatter.dateFormat = "yyyy.MM.dd (E)"
@@ -36,6 +40,7 @@ extension GalleryViewModel {
     }
 
     formatter.locale = Locale(identifier: "ko_KR")
+
     return formatter.string(from: date)
   }
 }

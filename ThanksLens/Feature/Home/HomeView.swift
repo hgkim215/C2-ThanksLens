@@ -47,6 +47,7 @@ struct HomeView: View {
             )
           }
           .tag(Tab.calendar)
+          .environmentObject(galleryViewModel)
       }
       .environmentObject(homeViewModel)
       .onChange(of: homeViewModel.selectedTab) {

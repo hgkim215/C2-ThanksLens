@@ -26,6 +26,11 @@
 		1463F20A2DAFA3DD0016BBE5 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F2092DAFA3DD0016BBE5 /* CalendarView.swift */; };
 		1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F20B2DAFA3E70016BBE5 /* GalleryViewModel.swift */; };
 		1463F20E2DAFA3F10016BBE5 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1463F20D2DAFA3F10016BBE5 /* CalendarViewModel.swift */; };
+		14AD7E3A2DB79E21005E8166 /* ThanksCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD7E392DB79E21005E8166 /* ThanksCalendarView.swift */; };
+		14AD7E3C2DB88681005E8166 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD7E3B2DB88681005E8166 /* Date+Extensions.swift */; };
+		14AD7E3E2DB8D99D005E8166 /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD7E3D2DB8D99D005E8166 /* MyDatePicker.swift */; };
+		14AD7E432DB9D402005E8166 /* MonthlyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD7E422DB9D402005E8166 /* MonthlyImage.swift */; };
+		14AD7E472DB9E2DA005E8166 /* UploadMonthlyImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AD7E462DB9E2DA005E8166 /* UploadMonthlyImageView.swift */; };
 		14B3C6322DB122BB000D516F /* PoorStory-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */; };
 		14B3C6362DB1FC0B000D516F /* HiMelody-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */; };
 		14B3C6392DB23384000D516F /* AddPolaroidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B3C6382DB23384000D516F /* AddPolaroidView.swift */; };
@@ -74,6 +79,11 @@
 		1463F2092DAFA3DD0016BBE5 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		1463F20B2DAFA3E70016BBE5 /* GalleryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModel.swift; sourceTree = "<group>"; };
 		1463F20D2DAFA3F10016BBE5 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
+		14AD7E392DB79E21005E8166 /* ThanksCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksCalendarView.swift; sourceTree = "<group>"; };
+		14AD7E3B2DB88681005E8166 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		14AD7E3D2DB8D99D005E8166 /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
+		14AD7E422DB9D402005E8166 /* MonthlyImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyImage.swift; sourceTree = "<group>"; };
+		14AD7E462DB9E2DA005E8166 /* UploadMonthlyImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadMonthlyImageView.swift; sourceTree = "<group>"; };
 		14B3C6312DB122BB000D516F /* PoorStory-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoorStory-Regular.ttf"; sourceTree = "<group>"; };
 		14B3C6352DB1FC0B000D516F /* HiMelody-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HiMelody-Regular.ttf"; sourceTree = "<group>"; };
 		14B3C6382DB23384000D516F /* AddPolaroidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPolaroidView.swift; sourceTree = "<group>"; };
@@ -162,6 +172,7 @@
 				142D0CBE2DB402620056A9BF /* ThanksPhotoPicker.swift */,
 				142D0CC22DB538DA0056A9BF /* CustomCancelButton.swift */,
 				142D0CC62DB539D20056A9BF /* CustomPrimaryButton.swift */,
+				14AD7E392DB79E21005E8166 /* ThanksCalendarView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -232,6 +243,7 @@
 				142D0CBA2DB39C170056A9BF /* TextField+Extensions.swift */,
 				1463F1F72DAF5AC60016BBE5 /* Font+Extensions.swift */,
 				1463F1F52DAF5ABA0016BBE5 /* Color+Extensions.swift */,
+				14AD7E3B2DB88681005E8166 /* Date+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -255,8 +267,9 @@
 		1463F1FC2DAF9AB80016BBE5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				14022A132DB099F700F41590 /* Gallery */,
 				14022A102DB0150100F41590 /* Home */,
+				14022A132DB099F700F41590 /* Gallery */,
+				14AD7E412DB9D37C005E8166 /* Calendar */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -287,6 +300,16 @@
 			children = (
 				1463F2092DAFA3DD0016BBE5 /* CalendarView.swift */,
 				1463F20D2DAFA3F10016BBE5 /* CalendarViewModel.swift */,
+				14AD7E3D2DB8D99D005E8166 /* MyDatePicker.swift */,
+				14AD7E462DB9E2DA005E8166 /* UploadMonthlyImageView.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		14AD7E412DB9D37C005E8166 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				14AD7E422DB9D402005E8166 /* MonthlyImage.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -450,18 +473,23 @@
 			files = (
 				1463F2082DAFA3CF0016BBE5 /* GalleryView.swift in Sources */,
 				1463F2012DAF9D840016BBE5 /* HomeViewModel.swift in Sources */,
+				14AD7E472DB9E2DA005E8166 /* UploadMonthlyImageView.swift in Sources */,
+				14AD7E3A2DB79E21005E8166 /* ThanksCalendarView.swift in Sources */,
 				1463F20A2DAFA3DD0016BBE5 /* CalendarView.swift in Sources */,
 				1463F1ED2DAF44540016BBE5 /* ThanksLensApp.swift in Sources */,
 				1463F20E2DAFA3F10016BBE5 /* CalendarViewModel.swift in Sources */,
 				14B3C6392DB23384000D516F /* AddPolaroidView.swift in Sources */,
 				1463F1F82DAF5AC60016BBE5 /* Font+Extensions.swift in Sources */,
+				14AD7E3E2DB8D99D005E8166 /* MyDatePicker.swift in Sources */,
 				142D0CBF2DB402740056A9BF /* ThanksPhotoPicker.swift in Sources */,
 				1463F1FF2DAF9D690016BBE5 /* HomeView.swift in Sources */,
 				1463F20C2DAFA3E70016BBE5 /* GalleryViewModel.swift in Sources */,
 				142D0CBB2DB39C210056A9BF /* TextField+Extensions.swift in Sources */,
 				142D0CC32DB538DA0056A9BF /* CustomCancelButton.swift in Sources */,
+				14AD7E3C2DB88681005E8166 /* Date+Extensions.swift in Sources */,
 				14022A152DB09A1100F41590 /* ThanksPolaroid.swift in Sources */,
 				142D0CC72DB539D20056A9BF /* CustomPrimaryButton.swift in Sources */,
+				14AD7E432DB9D402005E8166 /* MonthlyImage.swift in Sources */,
 				1463F1F62DAF5ABA0016BBE5 /* Color+Extensions.swift in Sources */,
 				14022A122DB0150F00F41590 /* Tab.swift in Sources */,
 				142D0CB92DB399700056A9BF /* MaxLengthModifier.swift in Sources */,
